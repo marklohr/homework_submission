@@ -1,0 +1,12 @@
+= form_for @assignment do |f|
+  %br
+    = f.label :name    
+    = f.text_field :name
+    = f.label :requirements
+    = f.text_area :requirements, size: "30x4"
+    %br
+    %br
+    = f.submit
+    %br
+    %a.btn.btn-primary.btn-lg.btn-block{:href => assignments_path, :role => "button"} Return To Assignments Page »
+    %br

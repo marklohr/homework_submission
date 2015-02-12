@@ -1,0 +1,29 @@
+%h1{:colspan => "2", :style => "text-align:center;"}
+  %u Courses
+%p#notice= notice
+%br
+%br
+.col-md-3
+  %a.btn.btn-primary.btn-lg.btn-block{:href => root_path, :role => "button"} Home Page »
+  %br
+.col-md-3
+  %a.btn.btn-primary.btn-lg.btn-block{:href => new_course_path, :role => "button"} Enter New Course »
+  %br
+.col-md-12
+  %ul
+  - @courses.each do |course|
+    %strong Name:
+    = course.name
+    %br
+    %br
+      %strong Description:
+      = course.description
+      %br
+      %br
+      / = link_to 'More Information', course_path(course)
+      %a.btn.btn-sm.btn-info{:href => course_path(course), :role => "button"} More Information
+      / = link_to 'Edit', edit_course_path(course)
+      %a.btn.btn-sm.btn-warning{:href => edit_course_path(course), :role => "button"} Edit Information
+      %br
+      %br
+  / = link_to 'Enter New Physician', new_course_path

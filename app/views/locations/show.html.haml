@@ -1,0 +1,15 @@
+%h1{:colspan => "2", :style => "text-align:center;"}
+  %u Location Information
+%br
+%strong Name:
+= @location.name
+%br
+%br
+%strong Requirements:
+= @location.requirements
+%br
+%br
+= link_to "Edit This Location", edit_location_path(@location), class: "btn btn-warning"
+= link_to "Remove This Location", location_path(@location), method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' }
+= link_to "List of Locations »", locations_path, class: "btn btn-primary"
+= link_to "Return to Home »", root_path, class: "btn btn-primary"

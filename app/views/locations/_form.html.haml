@@ -1,0 +1,12 @@
+= form_for @location do |f|
+  %br
+    = f.label :name    
+    = f.text_field :name
+    = f.label :description
+    = f.text_area :description, size: "30x4"
+    %br
+    %br
+    = f.submit
+    %br
+    %a.btn.btn-primary.btn-lg.btn-block{:href => locations_path, :role => "button"} Return To Locations Page »
+    %br

@@ -1,0 +1,26 @@
+%h1{:colspan => "2", :style => "text-align:center;"}
+  %u Assignments
+%p#notice= notice
+%br
+%br
+.col-md-5
+  %a.btn.btn-primary.btn-lg.btn-block{:href => root_path, :role => "button"} Home Page »
+  %br
+  %ul
+  - @assignments.each do |assignment|
+    %strong Name:
+    = assignment.name
+    %br
+    %br
+      %strong Requirements:
+      = assignment.requirements
+      %br
+      %br
+      / = link_to 'More Information', assignment_path(assignment)
+      %a.btn.btn-sm.btn-info{:href => assignment_path(assignment), :role => "button"} More Information
+      / = link_to 'Edit', edit_assignment_path(assignment)
+      %a.btn.btn-sm.btn-warning{:href => edit_assignment_path(assignment), :role => "button"} Edit Information
+      %br
+      %br
+  / = link_to 'Enter New Physician', new_assignment_path
+  %a.btn.btn-primary.btn-lg.btn-block{:href => new_assignment_path, :role => "button"} Enter New Assignment »

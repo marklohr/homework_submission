@@ -1,0 +1,26 @@
+%h1{:colspan => "2", :style => "text-align:center;"}
+  %u Locations
+%p#notice= notice
+%br
+%br
+.col-md-5
+  %a.btn.btn-primary.btn-lg.btn-block{:href => root_path, :role => "button"} Home Page »
+  %br
+  %ul
+  - @locations.each do |location|
+    %strong Name:
+    = location.name
+    %br
+    %br
+      %strong Description:
+      = location.description
+      %br
+      %br
+      / = link_to 'More Information', location_path(location)
+      %a.btn.btn-sm.btn-info{:href => location_path(location), :role => "button"} More Information
+      / = link_to 'Edit', edit_location_path(location)
+      %a.btn.btn-sm.btn-warning{:href => edit_location_path(location), :role => "button"} Edit Information
+      %br
+      %br
+  / = link_to 'Enter New Physician', new_location_path
+  %a.btn.btn-primary.btn-lg.btn-block{:href => new_location_path, :role => "button"} Enter New Location »

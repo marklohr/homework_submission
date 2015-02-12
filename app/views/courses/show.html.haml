@@ -1,0 +1,15 @@
+%h1{:colspan => "2", :style => "text-align:center;"}
+  %u Course Information
+%br
+%strong Name:
+= @course.name
+%br
+%br
+%strong Requirements:
+= @course.requirements
+%br
+%br
+= link_to "Edit This Course", edit_course_path(@course), class: "btn btn-warning"
+= link_to "Remove This Course", course_path(@course), method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' }
+= link_to "List of Courses »", courses_path, class: "btn btn-primary"
+= link_to "Return to Home »", root_path, class: "btn btn-primary"

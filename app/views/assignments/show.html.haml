@@ -1,0 +1,15 @@
+%h1{:colspan => "2", :style => "text-align:center;"}
+  %u Assignment Information
+%br
+%strong Name:
+= @assignment.name
+%br
+%br
+%strong Requirements:
+= @assignment.requirements
+%br
+%br
+= link_to "Edit This Assignment", edit_assignment_path(@assignment), class: "btn btn-warning"
+= link_to "Remove This Assignment", assignment_path(@assignment), method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' }
+= link_to "List of Assignments »", assignments_path, class: "btn btn-primary"
+= link_to "Return to Home »", root_path, class: "btn btn-primary"
